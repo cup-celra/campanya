@@ -136,3 +136,10 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Include Aina's framework
+ */
+if ( file_exists( dirname(__FILE__) . '/inc/aina.php' ) ) {
+	require_once 'inc/aina.php';
+}
