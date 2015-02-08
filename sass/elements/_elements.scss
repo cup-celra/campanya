@@ -12,6 +12,16 @@ body {
 	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
 }
 
+.site-content {
+  max-width: 980px;
+  margin: 0 auto;
+  background: white;
+  padding: 1em;
+}
+#secondary {
+	display: none;
+}
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: "";
