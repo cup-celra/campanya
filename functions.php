@@ -144,5 +144,10 @@ if ( file_exists( dirname(__FILE__) . '/inc/aina.php' ) ) {
   require_once 'inc/aina.php';
 }
 
+/**
+ * Include theme settings
+ */
+require 'inc/settings.php';
+
 /* Include proposta */
 require_once 'post-types/proposta.php';
