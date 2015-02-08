@@ -151,3 +151,13 @@ require 'inc/settings.php';
 
 /* Include proposta */
 require_once 'post-types/proposta.php';
+require_once 'inc/nova_proposta.php';
+
+function campanya_text($key) {
+  $texts = array(
+    'submit' => 'Envia-ho',
+    'fields_are_required' => '* Aquests camps són obligatoris',
+  );
+
+  return ( array_key_exists($key, $texts) ) ? $texts[$key] : $key;
+}
