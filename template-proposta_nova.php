@@ -22,24 +22,16 @@ get_header(); ?>
         <div class="form-yeah">
           <?php the_flash( 'yeah' ); ?>
         </div>
-       <div style="min-height: 500px">&nbsp;</div>
       <?php else: ?>
 
-        <form action="" method="post" id="proposta-form">
-
-          <?php wp_nonce_field( 'proposta-submission', 'proposta-nonce' ); ?>
-
-          <?php echo aina_add_custom_fields('proposta');  ?>
-
-          <?php echo wp_referer_field(); ?>
-
-          <p>
-            <?php echo campanya_text('fields_are_required'); ?>
-          </p>
-
-          <input type="submit" value="<?php echo campanya_text('submit'); ?>">
-
-        </form>
+        <?php
+          aina_accept_form_for('proposta', array(
+            'tax' => array(
+              'name' => 'propostacategories',
+              'parent_id' => 7
+            ),
+          ));
+        ?>
 
       <?php endif; ?>
 
