@@ -10,11 +10,12 @@ function aina_accept_form_for($post_type, $options = array()) {
     <?php wp_nonce_field( "{$post_type}-submission", "{$post_type}-nonce" ); ?>
 
     <?php if ( post_type_supports($post_type, 'title') ): ?>
-    <label>Títol</label><br>
-    <input type="text" name="post_title"><br>
+    <label for="post_title">Títol</label><br>
+    <input type="text" id="post_title" name="post_title"><br>
     <?php endif; ?>
 
     <?php if ( array_key_exists('tax', $options) ): ?>
+    <label for="">Escull un àmbit</label>
     <select name="category">
     <?php
     $terms = get_term_children( $options['tax']['parent_id'], $options['tax']['name'] );
@@ -25,7 +26,7 @@ function aina_accept_form_for($post_type, $options = array()) {
       <?php
     }
     ?>
-    </select>
+    </select><br />
     <?php endif; ?>
 
     <?php if ( post_type_supports($post_type, 'editor') ): ?>

@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic);
 /*
 Theme Name: campanya
 Theme URI: http://underscores.me/
@@ -41,6 +42,16 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   12.1 Captions
   12.2 Galleries
 --------------------------------------------------------------*/
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
 /*--------------------------------------------------------------
 1.0 Normalize
 --------------------------------------------------------------*/
@@ -229,7 +240,7 @@ input,
 select,
 textarea {
   color: #404040;
-  font-family: sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
@@ -295,17 +306,65 @@ html {
   box-sizing: inherit; }
 
 body {
-  background: #f5d304;
+  background: #fee528;
   /* Fallback for when there is no custom background color defined. */ }
 
 .site-content {
   max-width: 980px;
   margin: 0 auto;
-  background: white;
   padding: 1em; }
+
+.container {
+  max-width: 980px;
+  margin: 0 auto; }
+
+.site-title,
+.site-description {
+  margin: 0 auto;
+  text-align: center; }
+
+.site-title a {
+  display: block;
+  text-indent: -99999em;
+  background: url(img/logo.png) no-repeat center center;
+  height: 120px; }
+
+.site-description {
+  font-size: 5em;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1em; }
 
 #secondary {
   display: none; }
+
+.page-template-template-proposta_nova form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white; }
+  .page-template-template-proposta_nova form input[type="text"],
+  .page-template-template-proposta_nova form input[type="email"],
+  .page-template-template-proposta_nova form textarea {
+    width: 100%; }
+  .page-template-template-proposta_nova form textarea {
+    min-height: 15em; }
+  .page-template-template-proposta_nova form input[type="submit"] {
+    border: none;
+    background: #a31c1d; }
+
+.alert {
+  padding: .5em;
+  text-align: center;
+  color: white;
+  background: blue; }
+  .alert.success {
+    background: yellowgreen; }
+
+.form-error {
+  background: orangered;
+  text-align: center;
+  color: white; }
 
 blockquote:before, blockquote:after,
 q:before, q:after {
@@ -350,6 +409,14 @@ table {
   margin: 0 0 1.5em;
   width: 100%; }
 
+.social-icons-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center; }
+  .social-icons-list li {
+    display: inline-block; }
+
 /*--------------------------------------------------------------
 4.0 Forms
 --------------------------------------------------------------*/
@@ -360,21 +427,18 @@ input[type="submit"] {
   border: 1px solid;
   border-color: #ccc #ccc #bbb;
   border-radius: 3px;
-  background: #e6e6e6;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.8);
+  background: #a31c1d;
+  color: white;
   font-size: 12px;
   font-size: 0.75rem;
   line-height: 1;
-  padding: .6em 1em .4em;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
+  padding: .6em 1em .4em; }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-  border-color: #ccc #bbb #aaa;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02); }
+  border-color: #ccc #bbb #aaa; }
 
 button:focus,
 input[type="button"]:focus,
@@ -384,8 +448,7 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-  border-color: #aaa #bbb #bbb;
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15); }
+  border-color: #aaa #bbb #bbb; }
 
 input[type="text"],
 input[type="email"],
@@ -437,10 +500,9 @@ a {
 5.2 Menus
 --------------------------------------------------------------*/
 .main-navigation {
-  clear: both;
   display: block;
-  float: left;
-  width: 100%; }
+  width: 100%;
+  text-align: center; }
   .main-navigation ul {
     list-style: none;
     margin: 0;
@@ -462,11 +524,15 @@ a {
     .main-navigation ul li:hover > ul {
       left: auto; }
   .main-navigation li {
-    float: left;
+    display: inline-block;
     position: relative; }
   .main-navigation a {
     display: block;
-    text-decoration: none; }
+    text-decoration: none;
+    padding: .5em;
+    color: #a31c1d;
+    font-weight: bold;
+    font-size: 1.5rem; }
 
 /* Small menu. */
 .menu-toggle {
@@ -549,18 +615,19 @@ a {
 /*--------------------------------------------------------------
 8.0 Clearings
 --------------------------------------------------------------*/
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
+.clear:before::after,
+.clear:after::after,
+.entry-content:before::after,
+.entry-content:after::after,
+.comment-content:before::after,
+.comment-content:after::after,
+.site-header:before::after,
+.site-header:after::after,
+.site-content:before::after,
+.site-content:after::after,
+.site-footer:before::after,
+.site-footer:after::after {
+  clear: both;
   content: "";
   display: table; }
 

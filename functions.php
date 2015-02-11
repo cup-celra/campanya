@@ -157,6 +157,9 @@ function campanya_text($key) {
   $texts = array(
     'submit' => 'Envia-ho',
     'fields_are_required' => '* Aquests camps són obligatoris',
+    'yeah' => 'Gràcies per la teva proposta!',
+    'required_name_field' => "El camp del nom és obligatori",
+    'required_email_field' => "El camp de l'email és obligatori"
   );
 
   return ( array_key_exists($key, $texts) ) ? $texts[$key] : $key;

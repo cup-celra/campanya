@@ -264,3 +264,22 @@ function campanya_category_transient_flusher() {
 }
 add_action( 'edit_category', 'campanya_category_transient_flusher' );
 add_action( 'save_post',     'campanya_category_transient_flusher' );
+
+function  campanya_social_links() {
+  ?>
+  <ul class="social-icons-list">
+  	<?php $n = array('youtube', 'flickr', 'facebook', 'twitter'); ?>
+  	<?php
+  	  foreach($n as $i):
+  	  $link = get_option("theme_option_{$i}");
+  	  if ( $link == '' ) continue;
+  	?>
+    <li class="social-icon <?php echo $i; ?>">
+      <a href="<?php echo get_option("theme_option_{$i}"); ?>" target="_blank">
+      	<?php echo $i; ?>
+    	</a>
+    </li>
+  	<?php endforeach; ?>
+  </ul>
+  <?php
+}

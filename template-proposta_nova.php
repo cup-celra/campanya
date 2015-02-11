@@ -19,7 +19,7 @@ get_header(); ?>
       <?php endforeach; ?>
 
       <?php if ( is_flash( 'yeah' ) ): ?>
-        <div class="form-yeah">
+        <div class="alert success">
           <?php the_flash( 'yeah' ); ?>
         </div>
       <?php else: ?>

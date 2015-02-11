@@ -15,11 +15,71 @@ body {
 .site-content {
   max-width: 980px;
   margin: 0 auto;
-  background: white;
   padding: 1em;
+}
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+.site-title,
+.site-description {
+	margin: 0 auto;
+	text-align: center;
+}
+.site-title {
+  a {
+    display: block;
+    text-indent: -99999em;
+    background: url(img/logo.png) no-repeat center center;
+    height: 120px;
+  }
+}
+.site-description {
+  font-size: 5em;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,.8);
+  line-height: 1em;
 }
 #secondary {
 	display: none;
+}
+
+.page-template-template-proposta_nova {
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+    }
+    textarea {
+      min-height: 15em;
+    }
+    input[type="submit"] {
+      border: none;
+      background: $color_roig;
+      
+    }
+  }
+}
+
+.alert {
+  padding: .5em;
+  text-align: center;
+  color: white;
+  background: blue;
+  &.success {
+    background: yellowgreen;
+  }
+}
+
+.form-error {
+  background: orangered;
+  text-align: center;
+  color: white;
 }
 
 blockquote:before, blockquote:after,
@@ -46,3 +106,13 @@ img {
 }
 
 @import "tables";
+
+.social-icons-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  li {
+    display: inline-block;
+  }
+}

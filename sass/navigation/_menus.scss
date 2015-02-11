@@ -1,8 +1,7 @@
 .main-navigation {
-	clear: both;
 	display: block;
-	float: left;
 	width: 100%;
+	text-align: center;
 
 	ul {
 		list-style: none;
@@ -44,7 +43,7 @@
 		}
 	}
 	li {
-		float: left;
+	  display: inline-block;
 		position: relative;
 
 		&:hover > a {
@@ -53,6 +52,10 @@
 	a {
 		display: block;
 		text-decoration: none;
+		padding: .5em;
+		color: $color_roig;
+		font-weight: bold;
+		font-size: 1.5rem;
 	}
 
 	.current_page_item > a,
@@ -97,4 +100,8 @@
 	float: right;
 	text-align: right;
 	width: 50%;
+}
+
+@media screen and (min-width: 600px) {
+  
 }

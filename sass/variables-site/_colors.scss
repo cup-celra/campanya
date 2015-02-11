@@ -1,9 +1,10 @@
-$color_corporatiu: #f5d304;
+$color_corporatiu: rgb(254,229,40);
+$color_roig: rgb(163,28,29);
 
 $color__background-body: $color_corporatiu;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
+$color__background-button: $color_roig;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
