@@ -11,9 +11,12 @@
   </div><!-- #content -->
 
   <footer id="colophon" class="site-footer" role="contentinfo">
-    <?php campanya_social_links(); ?>
-    <div class="site-info">
-    </div><!-- .site-info -->
+    <div class="container">
+      <?php campanya_social_links(); ?>
+      <div class="site-info">
+        <small><?php content_region('termes-i-condicions'); ?></small>
+      </div><!-- .site-info -->
+    </div>
   </footer><!-- #colophon -->
 </div><!-- #page -->
 

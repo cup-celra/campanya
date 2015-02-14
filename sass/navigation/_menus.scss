@@ -45,6 +45,7 @@
 	li {
 	  display: inline-block;
 		position: relative;
+		margin: 1em 0;
 
 		&:hover > a {
 		}
@@ -52,7 +53,7 @@
 	a {
 		display: block;
 		text-decoration: none;
-		padding: .5em;
+		padding: 0 .5em;
 		color: $color_roig;
 		font-weight: bold;
 		font-size: 1.5rem;
@@ -61,6 +62,10 @@
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a {
+	  background: $color_roig;
+	  color: $color__background-body;
+	  border-radius: 50em;
+	  font-weight: normal;
 	}
 }
 

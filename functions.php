@@ -156,10 +156,12 @@ require_once 'inc/nova_proposta.php';
 function campanya_text($key) {
   $texts = array(
     'submit' => 'Envia-ho',
-    'fields_are_required' => '* Aquests camps són obligatoris',
+    'fields_are_required' => '<span class="required">*</span> Aquests camps són obligatoris',
     'yeah' => 'Gràcies per la teva proposta!',
     'required_name_field' => "El camp del nom és obligatori",
-    'required_email_field' => "El camp de l'email és obligatori"
+    'required_email_field' => "El camp de l'email és obligatori",
+    'required_category_field' => "Has de sel·leccionar un àmbit",
+    'required_post_content_field' => "Si us plau, escriu la teua proposta",
   );
 
   return ( array_key_exists($key, $texts) ) ? $texts[$key] : $key;

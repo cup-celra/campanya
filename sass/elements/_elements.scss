@@ -12,6 +12,10 @@ body {
 	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
 }
 
+.site-footer {
+  padding: 2em 0;
+}
+
 .site-content {
   max-width: 980px;
   margin: 0 auto;
@@ -44,12 +48,14 @@ body {
 	display: none;
 }
 
-.page-template-template-proposta_nova {
+.page-template-template-proposta_nova,
+.page-template-template-proposta_barri {
   form {
-    max-width: 500px;
+    max-width: 750px;
     margin: 0 auto;
     padding: 2rem;
     background: white;
+    box-shadow: 1px 1px 5px rgba(100,100,100,.5);
     input[type="text"],
     input[type="email"],
     textarea {
@@ -59,10 +65,25 @@ body {
       min-height: 15em;
     }
     input[type="submit"] {
+      padding: .5em;
       border: none;
       background: $color_roig;
-      
+      font-size: 1.2em;
     }
+    textarea,
+    input[type="text"] {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.page-template-template-portada {
+  .entry-header {
+    display: none;
+  }
+  .entry-content {
+    font-size: 1.5em;
+    text-align: center;
   }
 }
 
@@ -71,6 +92,8 @@ body {
   text-align: center;
   color: white;
   background: blue;
+  max-width: 750px;
+  margin: 0 auto;
   &.success {
     background: yellowgreen;
   }
@@ -80,6 +103,30 @@ body {
   background: orangered;
   text-align: center;
   color: white;
+}
+
+.social-icons-list {
+	li {
+		display: inline-block;
+		margin-right: 1em;
+		a {
+			display: block;
+			width: 54px;
+			height: 54px;
+			text-indent: -9999em;
+			background-repeat: no-repeat;
+		}
+		&.facebook {
+			a {
+				background-image: url(img/social/facebook.png);
+			}
+		}
+		&.twitter {
+			a {
+				background-image: url(img/social/twitter.png);
+			}
+		}
+	}
 }
 
 blockquote:before, blockquote:after,

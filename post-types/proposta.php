@@ -111,6 +111,10 @@ if ( ! function_exists( 'proposta_custom_fields' ) ) {
         'label'     => "Nom complet",
         'type'      => 'text',
       ),
+      'address' => array(
+        'label'     => "Adreça",
+        'type'      => 'text',
+      ),
       'email' => array(
         'label'     => 'Email',
         'type'      => 'email',

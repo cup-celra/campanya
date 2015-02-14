@@ -11,14 +11,14 @@ function accept_new_proposta() {
   // Set errors so blank submissions are not saved
   // but let's do nothing with it, yet
   $errors = array();
+  
+  $to_validate = array('post_content', 'category');
 
-  if ( empty($_POST['full_name']) ) {
-    $errors[] = 'name';
-    set_flash('full_name-error', campanya_text('required_name_field'));
-  }
-  if ( empty($_POST['email']) ) {
-    $errors[] = 'email';
-    set_flash('email-error', campanya_text('required_email_field'));
+  foreach ( $to_validate as $field ) {
+    if ( empty($_POST[$field]) ) {
+      $errors[] = $field;
+      set_flash("{$field}-error", campanya_text("required_{$field}_field"));
+    }
   }
 
   if ( count($errors) == 0 and wp_verify_nonce( $_POST['proposta-nonce'], 'proposta-submission' ) ) {
@@ -39,6 +39,9 @@ function accept_new_proposta() {
 
     // Add taxonomies
     wp_set_object_terms( $post_id, (int) $_POST['category'], 'propostacategories', false );
+    // Add parent taxonomy
+    $term = get_term( (int) $_POST['category'], 'propostacategories' );
+    wp_set_object_terms( $post_id, $term->parent, 'propostacategories', true );
 
     set_flash('yeah', campanya_text('yeah'));
 

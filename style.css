@@ -309,6 +309,9 @@ body {
   background: #fee528;
   /* Fallback for when there is no custom background color defined. */ }
 
+.site-footer {
+  padding: 2em 0; }
+
 .site-content {
   max-width: 980px;
   margin: 0 auto;
@@ -338,26 +341,48 @@ body {
 #secondary {
   display: none; }
 
-.page-template-template-proposta_nova form {
-  max-width: 500px;
+.page-template-template-proposta_nova form,
+.page-template-template-proposta_barri form {
+  max-width: 750px;
   margin: 0 auto;
   padding: 2rem;
-  background: white; }
+  background: white;
+  box-shadow: 1px 1px 5px rgba(100, 100, 100, 0.5); }
   .page-template-template-proposta_nova form input[type="text"],
   .page-template-template-proposta_nova form input[type="email"],
-  .page-template-template-proposta_nova form textarea {
+  .page-template-template-proposta_nova form textarea,
+  .page-template-template-proposta_barri form input[type="text"],
+  .page-template-template-proposta_barri form input[type="email"],
+  .page-template-template-proposta_barri form textarea {
     width: 100%; }
-  .page-template-template-proposta_nova form textarea {
+  .page-template-template-proposta_nova form textarea,
+  .page-template-template-proposta_barri form textarea {
     min-height: 15em; }
-  .page-template-template-proposta_nova form input[type="submit"] {
+  .page-template-template-proposta_nova form input[type="submit"],
+  .page-template-template-proposta_barri form input[type="submit"] {
+    padding: .5em;
     border: none;
-    background: #a31c1d; }
+    background: #a31c1d;
+    font-size: 1.2em; }
+  .page-template-template-proposta_nova form textarea,
+  .page-template-template-proposta_nova form input[type="text"],
+  .page-template-template-proposta_barri form textarea,
+  .page-template-template-proposta_barri form input[type="text"] {
+    margin-bottom: 1em; }
+
+.page-template-template-portada .entry-header {
+  display: none; }
+.page-template-template-portada .entry-content {
+  font-size: 1.5em;
+  text-align: center; }
 
 .alert {
   padding: .5em;
   text-align: center;
   color: white;
-  background: blue; }
+  background: blue;
+  max-width: 750px;
+  margin: 0 auto; }
   .alert.success {
     background: yellowgreen; }
 
@@ -365,6 +390,20 @@ body {
   background: orangered;
   text-align: center;
   color: white; }
+
+.social-icons-list li {
+  display: inline-block;
+  margin-right: 1em; }
+  .social-icons-list li a {
+    display: block;
+    width: 54px;
+    height: 54px;
+    text-indent: -9999em;
+    background-repeat: no-repeat; }
+  .social-icons-list li.facebook a {
+    background-image: url(img/social/facebook.png); }
+  .social-icons-list li.twitter a {
+    background-image: url(img/social/twitter.png); }
 
 blockquote:before, blockquote:after,
 q:before, q:after {
@@ -479,6 +518,9 @@ textarea {
   padding-left: 3px;
   width: 100%; }
 
+.required {
+  color: orangered; }
+
 /*--------------------------------------------------------------
 5.0 Navigation
 --------------------------------------------------------------*/
@@ -525,14 +567,22 @@ a {
       left: auto; }
   .main-navigation li {
     display: inline-block;
-    position: relative; }
+    position: relative;
+    margin: 1em 0; }
   .main-navigation a {
     display: block;
     text-decoration: none;
-    padding: .5em;
+    padding: 0 .5em;
     color: #a31c1d;
     font-weight: bold;
     font-size: 1.5rem; }
+  .main-navigation .current_page_item > a,
+  .main-navigation .current-menu-item > a,
+  .main-navigation .current_page_ancestor > a {
+    background: #a31c1d;
+    color: #fee528;
+    border-radius: 50em;
+    font-weight: normal; }
 
 /* Small menu. */
 .menu-toggle {

@@ -274,12 +274,33 @@ function  campanya_social_links() {
   	  $link = get_option("theme_option_{$i}");
   	  if ( $link == '' ) continue;
   	?>
-    <li class="social-icon <?php echo $i; ?>">
+    <li class="<?php echo $i; ?>">
       <a href="<?php echo get_option("theme_option_{$i}"); ?>" target="_blank">
       	<?php echo $i; ?>
     	</a>
     </li>
   	<?php endforeach; ?>
   </ul>
+  <?php
+}
+
+function campanya_form_validations() {
+  ?>
+  
+  <?php $validations = array( 'post_content', 'category' ); ?>
+  <?php foreach( $validations as $validation ): ?>
+    <?php if ( is_flash( $validation . '-error' ) ): ?>
+      <div class="form-error">
+        <?php the_flash( $validation . '-error' ); ?>
+      </div>
+    <?php endif; ?>
+  <?php endforeach; ?>
+
+  <?php if ( is_flash( 'yeah' ) ): ?>
+    <div class="alert success">
+      <?php the_flash( 'yeah' ); ?>
+    </div>
+  <?php endif; ?>
+  
   <?php
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Proposta Nova
+ * Template Name: Proposta Barri
  * Generated with Aina. Version 0.4.0
  */
 
@@ -15,7 +15,7 @@ get_header(); ?>
         aina_accept_form_for('proposta', array(
           'tax' => array(
             'name' => 'propostacategories',
-            'parent_id' => 7
+            'parent_id' => 8
           ),
         ));
       ?>
