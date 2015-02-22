@@ -107,6 +107,10 @@ function proposta_icon() {
 if ( ! function_exists( 'proposta_custom_fields' ) ) {
   function proposta_custom_fields() {
     return array(
+      'email' => array(
+        'label'     => 'Email <span class="required">*</span>',
+        'type'      => 'email',
+      ),
       'full_name' => array(
         'label'     => "Nom complet",
         'type'      => 'text',
@@ -115,15 +119,11 @@ if ( ! function_exists( 'proposta_custom_fields' ) ) {
         'label'     => "Adreça",
         'type'      => 'text',
       ),
-      'email' => array(
-        'label'     => 'Email',
-        'type'      => 'email',
-      ),
-      'keep_updated' => array(
-        'label'     => "Vols rebre informació sobre l'estat de la proposta?",
-        'type'      => 'checkbox',
-        'options'   => array( 'yes' => __('Sí') ),
-      ),
+//      'keep_updated' => array(
+//        'label'     => "Vols rebre informació sobre l'estat de la proposta?",
+//        'type'      => 'checkbox',
+//        'options'   => array( 'yes' => __('Sí') ),
+//      ),
    );
   }
 }

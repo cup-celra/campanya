@@ -12,7 +12,7 @@ function accept_new_proposta() {
   // but let's do nothing with it, yet
   $errors = array();
   
-  $to_validate = array('post_content', 'category');
+  $to_validate = array('post_content', 'category', 'email');
 
   foreach ( $to_validate as $field ) {
     if ( empty($_POST[$field]) ) {

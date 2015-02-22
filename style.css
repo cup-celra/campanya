@@ -335,16 +335,18 @@ body {
 .site-description {
   font-size: 5em;
   letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.8);
+  color: white;
   line-height: 1em; }
 
 #secondary {
   display: none; }
 
+.content-area {
+  max-width: 750px;
+  margin: 0 auto; }
+
 .page-template-template-proposta_nova form,
 .page-template-template-proposta_barri form {
-  max-width: 750px;
-  margin: 0 auto;
   padding: 2rem;
   background: white;
   box-shadow: 1px 1px 5px rgba(100, 100, 100, 0.5); }
@@ -369,6 +371,9 @@ body {
   .page-template-template-proposta_barri form textarea,
   .page-template-template-proposta_barri form input[type="text"] {
     margin-bottom: 1em; }
+
+.page-template-template-proposta_nova #meta-field-address {
+  display: none; }
 
 .page-template-template-portada .entry-header {
   display: none; }
@@ -528,11 +533,11 @@ textarea {
 5.1 Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue; }
+  color: #a31c1d; }
   a:visited {
-    color: purple; }
+    color: #a31c1d; }
   a:hover, a:focus, a:active {
-    color: midnightblue; }
+    color: #771515; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {

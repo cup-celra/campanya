@@ -287,7 +287,7 @@ function  campanya_social_links() {
 function campanya_form_validations() {
   ?>
   
-  <?php $validations = array( 'post_content', 'category' ); ?>
+  <?php $validations = array( 'post_content', 'category', 'email' ); ?>
   <?php foreach( $validations as $validation ): ?>
     <?php if ( is_flash( $validation . '-error' ) ): ?>
       <div class="form-error">

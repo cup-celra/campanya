@@ -85,9 +85,9 @@ function aina_custom_field_for($field, $value, $args = array()) {
     
     // Is label set?
     if ( isset($args['label']) ) {
-      $return .= '<label>' . ucfirst($args['label']) . '</label><br />';
+      $return .= "<label for='{$field}'>" . ucfirst($args['label']) . '</label><br />';
     } else {
-      $return .= '<label>' . ucfirst($field) . '</label><br />';
+      $return .= "<label for='{$field}'>" . ucfirst($field) . '</label><br />';
     }
 
     // Options
@@ -98,20 +98,20 @@ function aina_custom_field_for($field, $value, $args = array()) {
       switch ($args['type']) {
         // Simple inputs
         case 'text':
-          $return .= '<input type="text" name="' . $field . '" value="' . $value . '" placeholder="' . $placeholder . '" />';
+          $return .= '<input type="text" name="' . $field . '" id="' . $field . '" value="' . $value . '" placeholder="' . $placeholder . '" />';
           break;
         case 'url':
-          $return .= '<input type="url" name="' . $field . '" value="' . $value . '" placeholder="' . $placeholder . '" />';
+          $return .= '<input type="url" name="' . $field . '" id="' . $field . '" value="' . $value . '" placeholder="' . $placeholder . '" />';
           break;
         case 'email':
-          $return .= '<input type="email" name="' . $field . '" value="' . $value . '" placeholder="' . $placeholder . '" />';
+          $return .= '<input type="email" name="' . $field . '" id="' . $field . '" value="' . $value . '" placeholder="' . $placeholder . '" />';
           break;
         case 'datetime-local':
         case 'datetime':
-          $return .= '<input type="datetime-local" name="' . $field . '" value="' . $value . '" />';
+          $return .= '<input type="datetime-local" name="' . $field . '" id="' . $field . '" value="' . $value . '" />';
           break;
         case 'textarea':
-          $return .= '<textarea name="' . $field . '">' . $value . '</textarea>';
+          $return .= '<textarea name="' . $field . '" id="' . $field . '" >' . $value . '</textarea>';
           break;
 
         // With options
@@ -121,13 +121,13 @@ function aina_custom_field_for($field, $value, $args = array()) {
             foreach ($args['options'] as $option) {
               $checked = $option == $value ? true : false;
               $is_checked = $checked == true ? 'checked' : '';
-              $return .= '<input type="'. $args['type'] .'" name=" ' . $field . '[]" value="' . $option . '" ' . $is_checked . '/> ' . $option;
+              $return .= '<input type="'. $args['type'] .'" name=" ' . $field . '[]" id="' . $field . '" value="' . $option . '" ' . $is_checked . '/> ' . $option;
             }
           }
           break;
         case 'select':
           if ( isset($args['options']) && is_array($args['options']) ) {
-            $return .= '<select name="' . $field . '">';
+            $return .= '<select name="' . $field . '" id="' . $field . '">';
             foreach ($args['options'] as $option) {
               if ( $option == $value ) {
                 $return .= '<option value="' . $option . '">' . $option . '</option>';
@@ -145,9 +145,9 @@ function aina_custom_field_for($field, $value, $args = array()) {
       }
     }
   } else {
-    $return .= '<label>' . ucfirst($field) . '</label><br />';
-    $return .= '<input type="text" name=" ' . $field . '" value="' . $value . '" />';
+    $return .= "<label for='{$field}'>" . ucfirst($field) . '</label><br />';
+    $return .= '<input type="text" name=" ' . $field . '" id="' . $field . '" value="' . $value . '" />';
   }
 
-  return '<p>' . $return . '</p>';
+  return "<p id='meta-field-{$field}'>" . $return . '</p>';
 }

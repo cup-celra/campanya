@@ -16,8 +16,8 @@ function aina_accept_form_for($post_type, $options = array()) {
         $escull = "Escull un barri";
       }
     ?>
-    <label for=""><?php echo $escull; ?> <span class="required">*</span></label>
-    <select name="category">
+    <label for="category"><?php echo $escull; ?> <span class="required">*</span></label>
+    <select name="category" id="category">
       <option disabled selected> -- <?php echo $escull; ?> -- </option>
     <?php
     $terms = get_term_children( $options['tax']['parent_id'], $options['tax']['name'] );
@@ -32,8 +32,8 @@ function aina_accept_form_for($post_type, $options = array()) {
     <?php endif; ?>
 
     <?php if ( post_type_supports($post_type, 'editor') ): ?>
-    <label>Proposta <span class="required">*</span></label><br>
-    <textarea name="post_content" required></textarea>
+    <label for="post_content">Proposta <span class="required">*</span></label><br>
+    <textarea name="post_content" id="post_content" required></textarea>
     <?php endif; ?>
     
     <?php if ( post_type_supports($post_type, 'title') ): ?>

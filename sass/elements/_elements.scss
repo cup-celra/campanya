@@ -41,18 +41,21 @@ body {
 .site-description {
   font-size: 5em;
   letter-spacing: 1px;
-  color: rgba(255,255,255,.8);
+  color: white;
   line-height: 1em;
 }
 #secondary {
 	display: none;
 }
 
+.content-area {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
 .page-template-template-proposta_nova,
 .page-template-template-proposta_barri {
   form {
-    max-width: 750px;
-    margin: 0 auto;
     padding: 2rem;
     background: white;
     box-shadow: 1px 1px 5px rgba(100,100,100,.5);
@@ -74,6 +77,12 @@ body {
     input[type="text"] {
       margin-bottom: 1em;
     }
+  }
+}
+
+.page-template-template-proposta_nova {
+  #meta-field-address {
+    display: none;
   }
 }
 
