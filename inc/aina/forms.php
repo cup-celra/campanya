@@ -5,7 +5,7 @@
 
 function aina_accept_form_for($post_type, $options = array()) {
 ?>
-  <form action="" method="post" id="proposta-form">
+  <form action="/" method="post" id="proposta-form">
 
     <?php wp_nonce_field( "{$post_type}-submission", "{$post_type}-nonce" ); ?>
 
