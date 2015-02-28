@@ -14,7 +14,7 @@
     <div class="container">
       <?php campanya_social_links(); ?>
       <div class="site-info">
-        <small><?php content_region('termes-i-condicions'); ?></small>
+        <?php content_region('termes-i-condicions'); ?>
       </div><!-- .site-info -->
     </div>
   </footer><!-- #colophon -->
