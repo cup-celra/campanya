@@ -24,7 +24,7 @@ function aina_accept_form_for($post_type, $options = array()) {
     foreach($terms as $term_id) {
       $term = get_term( $term_id, $options['tax']['name'] );
       ?>
-      <option value="<?php echo $term->term_id; ?>" required><?php echo $term->name; ?></option>
+      <option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
       <?php
     }
     ?>
