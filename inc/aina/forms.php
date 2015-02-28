@@ -30,15 +30,15 @@ function aina_accept_form_for($post_type, $options = array()) {
     ?>
     </select><br />
     <?php endif; ?>
-
-    <?php if ( post_type_supports($post_type, 'editor') ): ?>
-    <label for="post_content">Proposta <span class="required">*</span></label><br>
-    <textarea name="post_content" id="post_content" required></textarea>
-    <?php endif; ?>
     
     <?php if ( post_type_supports($post_type, 'title') ): ?>
     <label for="post_title">Títol/Resum</label><br>
     <input type="text" id="post_title" name="post_title"><br>
+    <?php endif; ?>
+
+    <?php if ( post_type_supports($post_type, 'editor') ): ?>
+    <label for="post_content">Proposta <span class="required">*</span></label><br>
+    <textarea name="post_content" id="post_content" required></textarea>
     <?php endif; ?>
 
     <?php

@@ -108,7 +108,7 @@ if ( ! function_exists( 'proposta_custom_fields' ) ) {
   function proposta_custom_fields() {
     return array(
       'email' => array(
-        'label'     => 'Email <span class="required">*</span>',
+        'label'     => 'Adreça de correu electrònic <span class="required">*</span>',
         'type'      => 'email',
       ),
       'full_name' => array(
@@ -118,6 +118,11 @@ if ( ! function_exists( 'proposta_custom_fields' ) ) {
       'address' => array(
         'label'     => "Adreça",
         'type'      => 'text',
+      ),
+      'wanna_help' => array(
+        'label'     => "Vols unir-te al grup de treball d'aquest àmbit?",
+        'type'      => 'checkbox',
+        'options'   => array( 'yes' => __('Sí') ),
       ),
 //      'keep_updated' => array(
 //        'label'     => "Vols rebre informació sobre l'estat de la proposta?",
