@@ -9,10 +9,12 @@
 		padding-left: 0;
 
 		ul {
+		  background: $color_corporatiu;
+		  text-align: left;
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
 			position: absolute;
-			top: 1.5em;
+			top: 2em;
 			left: -999em;
 			z-index: 99999;
 
@@ -22,6 +24,7 @@
 			}
 
 			li {
+			  margin: 0;
 				&:hover > ul {
 					left: 100%;
 				}
@@ -29,6 +32,7 @@
 
 			a {
 				width: 200px;
+				padding: .2em .5em;
 			}
 
 			:hover > a {
